@@ -30775,7 +30775,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-jsx-runtime.development.js');
 }
-},{"./cjs/react-jsx-runtime.development.js":"../node_modules/react/cjs/react-jsx-runtime.development.js"}],"Pet.js":[function(require,module,exports) {
+},{"./cjs/react-jsx-runtime.development.js":"../node_modules/react/cjs/react-jsx-runtime.development.js"}],"SearchParams.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30783,50 +30783,93 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = require("react");
+
 var _jsxRuntime = require("react/jsx-runtime");
 
-// export default function Pet({ name, animal, breed }) {
-//   return React.createElement("div", {}, [
-//     React.createElement("h2", {}, name),
-//     React.createElement("h3", {}, animal),
-//     React.createElement("h3", {}, breed),
-//   ]);
-// }
-const Pet = ({
-  name,
-  animal,
-  breed
-}) => {
+const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+
+const SearchParams = () => {
+  const [location, setLocation] = (0, _react.useState)("Seattle,WA");
+  const [animal, updateAnimal] = (0, _react.useState)("");
+  const [breed, updateBreed] = (0, _react.useState)("");
+  const breeds = [];
   return (
     /*#__PURE__*/
-    (0, _jsxRuntime.jsxs)("div", {
-      children: [
+    (0, _jsxRuntime.jsx)("div", {
+      className: "search-params",
+      children:
       /*#__PURE__*/
-      (0, _jsxRuntime.jsx)("h2", {
-        children: name
-      }),
-      /*#__PURE__*/
-      (0, _jsxRuntime.jsx)("h3", {
-        children: animal
-      }),
-      /*#__PURE__*/
-      (0, _jsxRuntime.jsx)("h3", {
-        children: breed
-      })]
+      (0, _jsxRuntime.jsxs)("form", {
+        children: [
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsxs)("label", {
+          htmlFor: "location",
+          children: ["Location",
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsx)("input", {
+            id: "location",
+            value: location,
+            placeholder: "Location",
+            onChange: e => setLocation(e.target.value)
+          })]
+        }),
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsxs)("label", {
+          htmlFor: "animal",
+          children: ["Animal",
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsxs)("select", {
+            id: "animal",
+            value: animal,
+            onChange: e => updateAnimal(e.target.value),
+            children: [
+            /*#__PURE__*/
+            (0, _jsxRuntime.jsx)("option", {}), ANIMALS.map(animal =>
+            /*#__PURE__*/
+            (0, _jsxRuntime.jsx)("option", {
+              value: animal,
+              children: animal
+            }, animal))]
+          })]
+        }),
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsxs)("label", {
+          htmlFor: "breed",
+          children: ["Breed",
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsxs)("select", {
+            disabled: !breeds.length,
+            id: "breed",
+            value: breed,
+            onChange: e => updateBreed(e.target.value),
+            children: [
+            /*#__PURE__*/
+            (0, _jsxRuntime.jsx)("option", {}), breeds.map(breed =>
+            /*#__PURE__*/
+            (0, _jsxRuntime.jsx)("option", {
+              value: breed,
+              children: breed
+            }, breed))]
+          })]
+        }),
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)("button", {
+          children: "Submit"
+        })]
+      })
     })
   );
 };
 
-var _default = Pet;
+var _default = SearchParams;
 exports.default = _default;
-},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"App.js":[function(require,module,exports) {
 "use strict";
-
-var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _Pet = _interopRequireDefault(require("./Pet"));
+var _SearchParams = _interopRequireDefault(require("./SearchParams"));
 
 var _jsxRuntime = require("react/jsx-runtime");
 
@@ -30864,23 +30907,7 @@ const App = () => {
         children: "Adopt Me!"
       }),
       /*#__PURE__*/
-      (0, _jsxRuntime.jsx)(_Pet.default, {
-        name: "Luna",
-        animal: "Dog",
-        breed: "Havanese"
-      }),
-      /*#__PURE__*/
-      (0, _jsxRuntime.jsx)(_Pet.default, {
-        name: "Pepper",
-        animal: "Bird",
-        breed: "Cockatiel"
-      }),
-      /*#__PURE__*/
-      (0, _jsxRuntime.jsx)(_Pet.default, {
-        name: "Sudo",
-        animal: "Dog",
-        breed: "Wheaten Terrier"
-      })]
+      (0, _jsxRuntime.jsx)(_SearchParams.default, {})]
     })
   );
 };
@@ -30888,7 +30915,7 @@ const App = () => {
 _reactDom.default.render(
 /*#__PURE__*/
 (0, _jsxRuntime.jsx)(App, {}), document.getElementById("root"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./Pet":"Pet.js","react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react-dom":"../node_modules/react-dom/index.js","./SearchParams":"SearchParams.js","react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30916,7 +30943,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50411" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50467" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

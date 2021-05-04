@@ -1,16 +1,16 @@
 {
     "extends": [
+        // below is a package that exports sharable config
         "eslint:recommended",
         "plugin:import/errors",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
-        "prettier",
-        "prettier/react"
+        "prettier"
     ],
     "rules": {
         "react/prop-types" : 0,
-        "react-in-jsx-scopes" : 0
+        "react/react-in-jsx-scope" : 0
     },
     "plugins":["react", "import", "jsx-a11y"],
     "parserOptions": {

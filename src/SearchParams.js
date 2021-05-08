@@ -81,7 +81,7 @@ const SearchParams = () => {
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             onBlur={(e) => setTheme(e.target.value)}
-          >
+          > 
             <option value="peru">Peru</option>
             <option value="darkblue">Dark Blue</option>
             <option value="chartreuse">Chartreuse</option>

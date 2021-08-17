@@ -2,7 +2,7 @@
   "name": "adopt-me",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.html",
+  "main": "build/index.html",
   "homepage": "https://aliefdany.github.io/adopt-me",
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx}\"",

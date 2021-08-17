@@ -10,7 +10,7 @@ class Details extends Component {
 
   async componentDidMount() {
     const res = await fetch(
-      `http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}`
+      `https://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}`
     );
 
     const json = await res.json();
@@ -25,7 +25,7 @@ class Details extends Component {
   }
 
   toggleModal = () => this.setState({ showModal: !this.state.showModal });
-  adopt = () => (window.location = "http://bit.ly/pet-adopt");
+  adopt = () => (window.location = "https://bit.ly/pet-adopt");
 
   render() {
     if (this.state.loading) {

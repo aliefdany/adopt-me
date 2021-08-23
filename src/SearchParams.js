@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import useBreedList from "./useBreedList";
 import Results from "./Results";
 import ThemeContext from "./ThemeContext";
-
-const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+import pet, { ANIMALS } from "@frontendmasters/pet";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("");
@@ -14,13 +13,13 @@ const SearchParams = () => {
   const [theme, setTheme] = useContext(ThemeContext);
 
   async function requestPets() {
-    const res = await fetch(
-      `https://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
-    );
+    const { animals } = await pet.animals({
+      location,
+      breed,
+      type: animal,
+    });
 
-    const json = await res.json();
-    setPets(json.pets);
-    console.log(json.pets);
+    setPets(animals);
   }
 
   return (

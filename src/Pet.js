@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
-const Pet = ({ name, animal, breed, images, location, id }) => {
+const Pet = ({ name, animal, breed, media, location, id } = {}) => {
   let hero = "https://pets-images.dev-apis.com/pets/none.jpg";
-  if (images.length) {
-    hero = images[0];
+
+  if (media.length) {
+    hero = media[0].small;
   }
 
   return (

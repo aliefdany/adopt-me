@@ -4,28 +4,28 @@ import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeContext from "./ThemeContext";
 import Modal from "./Modal";
+import pet from "@frontendmasters/pet";
 
 class Details extends Component {
   state = { loading: true, showModal: false };
 
   async componentDidMount() {
-    const res = await fetch(
-      `https://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}`
-    );
-
-    const json = await res.json();
-    this.setState(
-      Object.assign(
-        {
-          loading: false,
-        },
-        json.pets[0]
-      )
-    );
+    pet.animal(this.props.match.params.id).then(({ animal }) => {
+      this.setState({
+        url: animal.url,
+        name: animal.name,
+        animal: animal.type,
+        location: `${animal.contact.address.city}, ${animal.contact.address.state}`,
+        description: animal.description,
+        media: animal.photos,
+        breed: animal.breeds.primary,
+        loading: false,
+      });
+    }, console.error);
   }
 
   toggleModal = () => this.setState({ showModal: !this.state.showModal });
-  adopt = () => (window.location = "https://bit.ly/pet-adopt");
+  adopt = () => (window.location = this.state.url);
 
   render() {
     if (this.state.loading) {
@@ -35,20 +35,19 @@ class Details extends Component {
     const {
       animal,
       breed,
-      city,
-      state,
+      location,
       description,
       name,
-      images,
+      media,
       showModal,
     } = this.state;
 
     return (
       <div className="details">
-        <Carousel images={images} />;
+        <Carousel media={media} />;
         <div>
           <h1>{name}</h1>
-          <h2>{`${animal} - ${breed} - ${city} - ${state}`}</h2>
+          <h2>{`${animal} - ${breed} - ${location}`}</h2>
           <ThemeContext.Consumer>
             {([theme]) => (
               <button

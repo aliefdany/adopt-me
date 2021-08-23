@@ -2,12 +2,23 @@ import { Component } from "react";
 
 class Carousel extends Component {
   state = {
+    photos: [],
     active: 0,
   };
 
   //   static defaultProps = {
   //     images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
   //   };
+
+  static getDerivedStateFromProps({ media }) {
+    let photos = ["http://placecorgi.com/600/600"];
+
+    if (media.length) {
+      photos = media.map(({ large }) => large);
+    }
+
+    return { photos };
+  }
 
   handleIndexClick = (event) => {
     this.setState({
@@ -16,13 +27,14 @@ class Carousel extends Component {
   };
 
   render() {
-    const { active } = this.state;
-    const { images } = this.props;
+    const { photos, active } = this.state;
+    // const { active } = this.state;
+    // const { images } = this.props;
     return (
       <div className="carousel">
-        <img src={images[active]} alt="animal" />
+        <img src={photos[active]} alt="animal" />
         <div className="carousel-smaller">
-          {images.map((photo, index) => (
+          {photos.map((photo, index) => (
             // eslint-disable-next-line
             <img
               onClick={this.handleIndexClick}

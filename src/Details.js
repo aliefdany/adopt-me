@@ -23,7 +23,7 @@ class Details extends Component {
     this.setState({
       url: animalFinal.url,
       name: animalFinal.name,
-      animalFinal: animalFinal.type,
+      animal: animalFinal.type,
       location: `${animalFinal.contact.address.city}, ${animalFinal.contact.address.state}`,
       description: animalFinal.description,
       media: animalFinal.photos,

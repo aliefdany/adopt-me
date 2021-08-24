@@ -4,24 +4,32 @@ import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeContext from "./ThemeContext";
 import Modal from "./Modal";
-import pet from "@frontendmasters/pet";
 
 class Details extends Component {
   state = { loading: true, showModal: false };
 
   async componentDidMount() {
-    pet.animal(this.props.match.params.id).then(({ animal }) => {
-      this.setState({
-        url: animal.url,
-        name: animal.name,
-        animal: animal.type,
-        location: `${animal.contact.address.city}, ${animal.contact.address.state}`,
-        description: animal.description,
-        media: animal.photos,
-        breed: animal.breeds.primary,
-        loading: false,
-      });
-    }, console.error);
+    let animalFinal = {};
+
+    try {
+      const animal = await fetch(
+        `https://aliefdany.me/api/pets/animals/${this.props.match.params.id}`
+      );
+      animalFinal = await animal.json();
+    } catch (e) {
+      console.error("animal not found");
+    }
+
+    this.setState({
+      url: animalFinal.url,
+      name: animalFinal.name,
+      animalFinal: animalFinal.type,
+      location: `${animalFinal.contact.address.city}, ${animalFinal.contact.address.state}`,
+      description: animalFinal.description,
+      media: animalFinal.photos,
+      breed: animalFinal.breeds.primary,
+      loading: false,
+    });
   }
 
   toggleModal = () => this.setState({ showModal: !this.state.showModal });

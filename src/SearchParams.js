@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import useBreedList from "./useBreedList";
 import Results from "./Results";
 import ThemeContext from "./ThemeContext";
-import pet, { ANIMALS } from "@frontendmasters/pet";
+import { ANIMALS } from "@frontendmasters/pet";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("");
@@ -13,14 +13,27 @@ const SearchParams = () => {
   const [theme, setTheme] = useContext(ThemeContext);
 
   async function requestPets() {
-    const { animals } = await pet.animals({
-      location,
-      breed,
-      type: animal,
-    });
+    const petsApi = await fetch(
+      `https://aliefdany.me/api/pets/${location ? location : "unfilled"}/${
+        breed ? breed : "unfilled"
+      }/${animal ? animal : "unfilled"}`
+    );
 
-    setPets(animals);
+    let animals = [];
+
+    try {
+      animals = await petsApi.json();
+    } catch (e) {
+      console.error("Pets not found");
+    }
+
+    setPets(animals.length ? animals : []);
   }
+
+  useEffect(() => {
+    updateBreed("");
+    setLocation("");
+  }, [animal]);
 
   return (
     <div className="search-params">

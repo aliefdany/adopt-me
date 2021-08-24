@@ -33,7 +33,7 @@ class Details extends Component {
   }
 
   toggleModal = () => this.setState({ showModal: !this.state.showModal });
-  adopt = () => (window.location = this.state.url);
+  adopt = () => window.open(this.state.url, "_blank");
 
   render() {
     if (this.state.loading) {

@@ -19,7 +19,7 @@ From the result, you can choose which pet you want to adopt
 
 Then, it's up to you to adopt that animal or not. By clicking the button "yes" you will redirected to real pet adoption website [Petfinder][2] in which you can check more details about that animal you want to adopt. happy adopting! 🐕
 
-<img src="https://ik.imagekit.io/aliefseventri/Projects/Adopt-Me/gif/pet-03_OTTUEEbWf.gif?updatedAt=1629994547914&ik-s=675a779a3e0d2b277b0c4009b0fb4fb543d55965" alt="adopt-me demo 03" />
+<img src="https://raw.githubusercontent.com/aliefdany/adopt-me/master/media/gif/pet-03.gif" alt="adopt-me demo 03" />
 
 
 

@@ -13,6 +13,11 @@ First, you can input the location where you want to find your pet and then the a
 
 *nb : there's something wrong with the API, the result is always the same even we enter different location. i've test it using API development like Postman and Insomnia
 
+From the result, you can choose which pet you want to adopt
+
+<img src="https://ik.imagekit.io/aliefseventri/Projects/Adopt-Me/gif/pet-02_l645UhcGL.gif?updatedAt=1629994561610&ik-s=d4b79c77659b9451d5324d3d5db7ab2ed5b4128c" alt="adopt-me demo 02" />
+
+
 
 
 <hr/>

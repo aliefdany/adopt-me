@@ -15,7 +15,7 @@ First, you can input the location where you want to find your pet and then the a
 
 From the result, you can choose which pet you want to adopt
 
-<img src="https://ik.imagekit.io/aliefseventri/Projects/Adopt-Me/gif/pet-02_l645UhcGL.gif?updatedAt=1629994561610&ik-s=d4b79c77659b9451d5324d3d5db7ab2ed5b4128c" alt="adopt-me demo 02" />
+<img src="https://raw.githubusercontent.com/aliefdany/adopt-me/master/media/gif/pet-02.gif" alt="adopt-me demo 02" />
 
 Then, it's up to you to adopt that animal or not. By clicking the button "yes" you will redirected to real pet adoption website [Petfinder][2] in which you can check more details about that animal you want to adopt. happy adopting! 🐕
 

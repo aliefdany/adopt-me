@@ -9,7 +9,7 @@ Here's the link to the [demo][3], or see below👇
 
 First, you can input the location where you want to find your pet and then the animal type and breed type. the [API][4] will return the coresponding result according to the search params.
 
-<img src="https://ik.imagekit.io/aliefseventri/Projects/Adopt-Me/gif/pet-02_l645UhcGL.gif?updatedAt=1629994561610&ik-s=d4b79c77659b9451d5324d3d5db7ab2ed5b4128c"/>where
+<img src="https://ik.imagekit.io/aliefseventri/Projects/Adopt-Me/gif/pet-01_7_gQ1CMjW.gif?updatedAt=1629994540873&ik-s=ebf8b330b2d3d7ee1e585832682c3d7b7e2f14a3"/>where
 
 *nb : there's something wrong with the API, the result is always the same even we enter different location. i've test it using API development like Postman and Insomnia
 

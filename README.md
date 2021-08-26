@@ -4,10 +4,16 @@ Adopt Me is a pet adoption apps that built with React. It is a part of challenge
 <hr/>
 
 ### Demo💻
-Here's the link to the [demo][3]
+Here's the link to the [demo][3], or see below👇
 
 
-<img src="https://ik.imagekit.io/aliefseventri/Projects/Adopt-Me/gif/pet-02_l645UhcGL.gif?updatedAt=1629994561610&ik-s=d4b79c77659b9451d5324d3d5db7ab2ed5b4128c"/>
+First, you can input the location where you want to find your pet and then the animal type and breed type. the [API][4] will return the coresponding result according to the search params.
+
+<img src="https://ik.imagekit.io/aliefseventri/Projects/Adopt-Me/gif/pet-02_l645UhcGL.gif?updatedAt=1629994561610&ik-s=d4b79c77659b9451d5324d3d5db7ab2ed5b4128c"/>where
+
+*nb : there's something wrong with the API, the result is always the same even we enter different location. i've test it using API development like Postman and Insomnia
+
+
 
 <hr/>
 
@@ -25,3 +31,4 @@ Here's the link to the [demo][3]
 [1]: https://frontendmasters.com
 [2]: https://petfinder.com
 [3]: https://aliefdany.github.io/adopt-me
+[4]: https://www.npmjs.com/package/@frontendmasters/pet

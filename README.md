@@ -6,6 +6,9 @@ Adopt Me is a pet adoption apps that built with React. It is a part of challenge
 ### Demo💻
 Here's the link to the [demo][3]
 
+
+![](https://ik.imagekit.io/aliefseventri/Projects/Adopt-Me/gif/pet-02_l645UhcGL.gif?updatedAt=1629994561610&ik-s=d4b79c77659b9451d5324d3d5db7ab2ed5b4128c)
+
 <hr/>
 
 ### Tools🔨
